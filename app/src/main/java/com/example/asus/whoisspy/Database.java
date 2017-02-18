@@ -42,12 +42,12 @@ public final class Database extends AppCompatActivity {
     {
         return spy_positions;
     }
-    public void load_datas(Context load_context)
+    public static void load_datas(Context load_context)
     {
         mysql_database=new Mysql_Database(load_context);
         System.out.print("已讀取!!!!!!!!!!!!!!!!!!!!!!!!!!");
         SQLiteDatabase db = mysql_database.getReadableDatabase();
-        mysql_database=new Mysql_Database(this);
+        mysql_database=new Mysql_Database(load_context);
         Cursor cursor=db.query(TABLE_NAME, null, null, null, null, null, null, null);
 
 
@@ -60,6 +60,7 @@ public final class Database extends AppCompatActivity {
 
             questions.add(temp);
         }
+        db.close();
         /*temp.setQuestion1(cursor.getString(0));
         temp.setQuestion2(cursor.getString(1));
         questions.add(temp);*/

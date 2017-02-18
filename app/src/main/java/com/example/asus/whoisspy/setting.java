@@ -38,9 +38,7 @@ public class setting extends AppCompatActivity {
         nonum=(Spinner)findViewById(R.id.nonum);
         start_game=(Button)findViewById(R.id.start_game);
         final Integer[] select_num={4,5,6,7,8,9,10,11,12,13,14};
-        Database database=new Database();
-        //Context context;
-        database.load_datas(this);
+
         //有id、question1、question2
         /*for(int i=0;i<Database.questions.size();i++) {
             System.out.print(Database.questions.get(i).getQuestion1()+" "+Database.questions.get(i).getQuestion2());
