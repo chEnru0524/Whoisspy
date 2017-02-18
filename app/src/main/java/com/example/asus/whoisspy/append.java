@@ -45,6 +45,8 @@ public class append extends AppCompatActivity {
                     Add_New_Data();
                     Toast.makeText(append.this,"成功加入",Toast.LENGTH_SHORT).show();
                 }
+                Database.questions.clear();
+                Database.load_datas(append.this);
                 Intent myIntent;
                 myIntent = new Intent(append.this, MainActivity.class);
                 startActivity(myIntent);
