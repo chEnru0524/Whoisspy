@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="81dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="305dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="116dp"
+            android:layout_height="281dp">
+
+            <TextView
+                android:text="參賽人數"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:id="@+id/joiner"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="48dp" />
+
+            <TextView
+                android:text="臥底人數"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:id="@+id/spy"
+                android:textSize="24sp"
+                android:gravity="center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="42dp" />
+
+            <TextView
+                android:text="白板人數"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/nothing"
+                android:textSize="24sp"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="281dp"
+            android:weightSum="1">
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/joinernum"
+                android:layout_weight="0.17"
+                android:gravity="right|end"
+                android:layout_gravity="right|center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.21" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/spynum"
+                android:layout_weight="0.24"
+                android:gravity="right|end"
+                android:layout_gravity="right|center" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.16" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nonum"
+                android:layout_weight="0.16"
+                android:gravity="left|end"
+                android:layout_gravity="left|center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:text="正式開始"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/start_game"
+        android:layout_weight="0.43" />
+
+</LinearLayout>

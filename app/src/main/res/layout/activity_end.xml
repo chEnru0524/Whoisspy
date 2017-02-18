@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="399dp"
+        android:id="@+id/join_scene">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:id="@+id/join_Table">
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:text="回主畫面"
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:id="@+id/re_main"
+            android:layout_weight="1" />
+
+        <Button
+            android:text="再玩一次"
+            android:layout_width="wrap_content"
+            android:layout_height="68dp"
+            android:id="@+id/restart"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+</LinearLayout>
