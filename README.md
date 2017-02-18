@@ -1,4 +1,5 @@
 # Whoisspy
 a simple game  
 no questions,needed to add by yourself  
-apk is not the newest  
+only can add question,canˋt delete question  
+apk is not the newest  
