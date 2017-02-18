@@ -97,20 +97,25 @@ public class setting extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                if(Database.allnum/2<Database.spynum+Database.nothing)
+                {
+                    Toast.makeText(setting.this,"臥底、白板人數太多",Toast.LENGTH_SHORT);
+                }
                 //Random random_which_question=new Random();
                 //random 0-14 spy position and nothing position
-                Database.Random_Values();
-                //random nothing position
-                /*for(int i=0;i<Database.nothing;i++)
-                {
-                    Database.nothing_positions.add((int)(Math.random()*(9-3+1)+3));
-                }*/
-                //Toast.makeText(setting.this,String.valueOf(ran[0]),Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent();
-                intent.setClass(setting.this,joiner_saw.class);
-                startActivity(intent);
-                setting.this.finish();
+                else{
+                    Database.Random_Values();
+                    //random nothing position
+                    /*for(int i=0;i<Database.nothing;i++)
+                    {
+                        Database.nothing_positions.add((int)(Math.random()*(9-3+1)+3));
+                    }*/
+                    //Toast.makeText(setting.this,String.valueOf(ran[0]),Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent();
+                    intent.setClass(setting.this,joiner_saw.class);
+                    startActivity(intent);
+                    setting.this.finish();
+                }
             }
 
         });

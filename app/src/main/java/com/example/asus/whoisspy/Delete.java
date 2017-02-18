@@ -2,6 +2,7 @@ package com.example.asus.whoisspy;
 
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -24,7 +25,7 @@ import static com.example.asus.whoisspy.Mysql_Database.TABLE_NAME;
 public class Delete extends AppCompatActivity {
     private List<TextView> question_view;
     private TableLayout scene;
-    private SQLiteDatabase db=null;
+    private Mysql_Database mysql_database=null;
     private int check_delete=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,8 @@ public class Delete extends AppCompatActivity {
         setContentView(R.layout.activity_delete);
         question_view = new ArrayList<>();
         scene=(TableLayout) findViewById(R.id.question_Table);
+        mysql_database=new Mysql_Database(Delete.this);
+        mysql_database.close();
         for (; check_delete <Database.questions.size();check_delete++) {
             final TextView temp = new TextView(this);
             temp.setId(check_delete);
@@ -54,7 +57,7 @@ public class Delete extends AppCompatActivity {
                 public void onClick(View v) {
                     //點擊刪除題目
                     //int i_id=v.getId();
-                    String delete_question1=Database.questions.get(check_delete).getQuestion1();
+                    //String delete_question1=Database.questions.get(check_delete).getQuestion1();
 
                     //Toast.makeText(Delete.this,id,Toast.LENGTH_SHORT).show();
                     //System.out.print(id);
@@ -95,11 +98,11 @@ public class Delete extends AppCompatActivity {
     }
     public boolean deleteTitle(int id)
     {
-        String where=_ID+"="+id;
-        Mysql_Database mysql_database=new Mysql_Database(Delete.this);
+        //String where="="+String.valueOf(id);
+        mysql_database=new Mysql_Database(Delete.this);
         SQLiteDatabase db = mysql_database.getWritableDatabase();
         //db.delete(TABLE_NAME, null, null);
-        return db.delete(TABLE_NAME, where, null)>0;
+        return db.delete(TABLE_NAME,"_ID=?", new String[]{Integer.toString(id)})>0;
     }
     public boolean Delete_All()
     {
